@@ -28,7 +28,7 @@ for turn in range(4):
     
     while True:
         try:
-            guess_row = (raw_input("Guess Row:"))
+            guess_row = raw_input("Guess Row:")
             guess_row = int(guess_row)
             break
         except ValueError:
@@ -36,7 +36,7 @@ for turn in range(4):
 
     while True:
         try:
-            guess_col = (raw_input("Guess Col:"))
+            guess_col = raw_input("Guess Col:")
             guess_col = int(guess_col)
             break
         except ValueError:
