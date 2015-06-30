@@ -25,8 +25,23 @@ print ship_col
 
 for turn in range(4):
     print "Turn", turn+1
-    guess_row = int(raw_input("Guess Row:")) #handle exceptions - fix
-    guess_col = int(raw_input("Guess Col:"))
+    
+    while True:
+        try:
+            guess_row = (raw_input("Guess Row:"))
+            guess_row = int(guess_row)
+            break
+        except ValueError:
+            print("No valid integer! Please try again ...")
+
+    while True:
+        try:
+            guess_col = (raw_input("Guess Col:"))
+            guess_col = int(guess_col)
+            break
+        except ValueError:
+            print("No valid integer! Please try again ...")
+    
     
     if guess_row == ship_row and guess_col == ship_col:
         print "Congratulations! You sunk my battleship!"
@@ -41,4 +56,5 @@ for turn in range(4):
             board[guess_row][guess_col] = "X"
         if turn == 3:
             print "Game Over"
+        # Print (turn + 1) here!
         print_board(board)
